@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from app.routers import utilisateurs
+from app.routers import oeuvre, utilisateurs
 from . import models
 from .database import engine
 from .routers import annee, artefact, espece, personnage
@@ -14,6 +14,7 @@ app.include_router(artefact.router)
 app.include_router(espece.router)
 app.include_router(personnage.router)
 app.include_router(utilisateurs.router)
+app.include_router(oeuvre.router)
 
 @app.get("/")
 def read_root():
